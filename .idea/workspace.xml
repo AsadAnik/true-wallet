@@ -5,61 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cfd2d8d-6fb9-4594-9f07-dbbdbb1cb558" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/add-expense-placeholder.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/dashboard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/profile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/wallet.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/add-expense.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/cards.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/settings.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/CalendarStrip.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/widgets/CreditCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/widgets/CustomHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/widgets/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/add-expense/AddExpenseTabs.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/add-expense/CardSelector.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/add-expense/CategorySelector.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/add-expense/CurrencySelector.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/add-expense/ExpenseIncomeForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/add-expense/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/dashboard/DashboardSummaryView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/dashboard/OverviewChartView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/dashboard/TopSpendingView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/dashboard/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/home/BalanceCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/home/TransactionItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/home/TransactionList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/home/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/profile/ProfileHeaderView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/profile/ProfileMenuView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/profile/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/wallet/AnalyticsChartView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/wallet/CreditCardsView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/wallet/TotalBalanceHeadView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/wallet/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/date.utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/explore.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/external-link.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/haptic-tab.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/hello-wave.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/parallax-scroll-view.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/themed-text.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/themed-view.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/collapsible.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/icon-symbol.ios.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/icon-symbol.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/theme.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/use-color-scheme.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/use-color-scheme.web.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/use-theme-color.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/reset-project.js" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/add-expense/ColorSelector.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/add-expense/IconPicker.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/add-expense.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/add-expense.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/widgets/CreditCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/widgets/CreditCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/add-expense/ExpenseIncomeForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/ExpenseIncomeForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/add-expense/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="77" />
+    <option name="cachedIndexableFilesCount" value="18258" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -85,38 +37,39 @@
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="37mq23Zqse52BzNyVXSP8QHAoAJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "javascript.preferred.runtime.type.id": "node",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/asadanik/Documents/Projects/true-wallet/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/asadanik/Documents/Projects/true-wallet/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
         <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
         <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
   </component>
@@ -148,6 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1767518391162</updated>
       <workItem from="1767518393672" duration="26351000" />
+      <workItem from="1767583929743" duration="4312000" />
     </task>
     <servers />
   </component>

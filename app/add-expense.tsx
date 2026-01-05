@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
+    paddingTop: 30,
     position: 'relative',
   },
   closeButton: {
