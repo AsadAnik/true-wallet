@@ -15,6 +15,7 @@ interface CardSelectorProps {
   onSelect: (cardKey: string) => void;
 }
 
+// region CARD SELECTOR
 const CardSelector = ({ selectedCard, onSelect }: CardSelectorProps) => {
   return (
     <View style={styles.container}>
@@ -41,6 +42,7 @@ const CardSelector = ({ selectedCard, onSelect }: CardSelectorProps) => {
   );
 };
 
+// region STYLE-SHEET
 const styles = StyleSheet.create({
   container: {
     marginBottom: 20,

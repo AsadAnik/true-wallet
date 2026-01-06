@@ -18,7 +18,7 @@ interface CreditCardProps {
 // region CREDIT CARD
 const CreditCard = ({ bank, number, type, colors, cardHolder, expires, style }: CreditCardProps) => {
     return (
-        <LinearGradient colors={colors} style={[styles.card, style]}>
+        <LinearGradient colors={colors as any} style={[styles.card, style]}>
             <View style={styles.cardTop}>
                 <Text style={styles.cardBank}>{bank}</Text>
                 <FontAwesome name={`cc-${type}`} size={24} color="#fff"/>

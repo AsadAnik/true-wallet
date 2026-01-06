@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { Pressable, StyleSheet, ScrollView } from 'react-native';
 
 const colors = [
     '#FF9800', '#2196F3', '#9C27B0', '#E91E63', '#795548',
@@ -18,7 +18,7 @@ const ColorSelector = ({ selectedColor, onSelect }: ColorSelectorProps) => {
             {colors.map(color => {
                 const isSelected = selectedColor === color;
                 return (
-                    <TouchableOpacity
+                    <Pressable
                         key={color}
                         style={[styles.colorCircle, { backgroundColor: color }, isSelected && styles.selectedCircle]}
                         onPress={() => onSelect(color)}

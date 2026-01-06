@@ -14,7 +14,6 @@ interface IconPickerProps {
     onSelect: (icon: string, color: string) => void;
 }
 
-// region ICON PICKER
 const IconPicker = ({ onSelect }: IconPickerProps) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedIcon, setSelectedIcon] = useState('shopping-cart');
@@ -34,7 +33,7 @@ const IconPicker = ({ onSelect }: IconPickerProps) => {
         <>
             <TouchableOpacity style={styles.pickerButton} onPress={() => setModalVisible(true)}>
                 <View style={[styles.iconPreview, { backgroundColor: selectedColor }]}>
-                    <FontAwesome name={selectedIcon} size={30} color="#fff"/>
+                    <FontAwesome name={selectedIcon as any} size={30} color="#fff"/>
                 </View>
                 <Text style={styles.pickerButtonText}>Choose Icon</Text>
             </TouchableOpacity>
@@ -55,7 +54,7 @@ const IconPicker = ({ onSelect }: IconPickerProps) => {
 
                     <View style={styles.previewSection}>
                         <View style={[styles.largeIconPreview, { backgroundColor: selectedColor }]}>
-                            <FontAwesome name={selectedIcon} size={50} color="#fff"/>
+                            <FontAwesome name={selectedIcon as any} size={50} color="#fff"/>
                         </View>
                     </View>
 
@@ -75,7 +74,7 @@ const IconPicker = ({ onSelect }: IconPickerProps) => {
                         contentContainerStyle={styles.iconGrid}
                         renderItem={({ item }) => (
                             <TouchableOpacity style={styles.iconWrapper} onPress={() => setSelectedIcon(item)}>
-                                <FontAwesome name={item} size={30} color="#333"/>
+                                <FontAwesome name={item as any} size={30} color="#333"/>
                             </TouchableOpacity>
                         )}
                     />
@@ -89,7 +88,6 @@ const IconPicker = ({ onSelect }: IconPickerProps) => {
     );
 };
 
-// region STYLE-SHEET
 const styles = StyleSheet.create({
     pickerButton: {
         flexDirection: 'row',

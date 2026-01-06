@@ -5,12 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cfd2d8d-6fb9-4594-9f07-dbbdbb1cb558" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/features/add-expense/ColorSelector.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/add-expense/IconPicker.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ui/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/add-expense/IncomeExpense.constants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/add-expense/components/ExpenseForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/add-expense/components/IncomeForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/add-expense/components/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/add-expense.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/add-expense.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/widgets/CreditCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/widgets/CreditCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/add-expense/AddExpenseTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/AddExpenseTabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/add-expense/CardSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/CardSelector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/add-expense/CategorySelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/CategorySelector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/add-expense/ColorSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/ColorSelector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/add-expense/CurrencySelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/CurrencySelector.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/add-expense/ExpenseIncomeForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/ExpenseIncomeForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/add-expense/IconPicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/IconPicker.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/add-expense/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +29,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="18258" />
+    <option name="cachedIndexableFilesCount" value="18263" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -82,6 +92,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/features/add-expense" />
+      <recent name="$PROJECT_DIR$/features/add-expense/components" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/features/home/components" />
     </key>
@@ -101,7 +113,10 @@
       <option name="presentableId" value="Default" />
       <updated>1767518391162</updated>
       <workItem from="1767518393672" duration="26351000" />
-      <workItem from="1767583929743" duration="4312000" />
+      <workItem from="1767583929743" duration="4442000" />
+      <workItem from="1767627630684" duration="60000" />
+      <workItem from="1767632103910" duration="3223000" />
+      <workItem from="1767671389536" duration="21111000" />
     </task>
     <servers />
   </component>
