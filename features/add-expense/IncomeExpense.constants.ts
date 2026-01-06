@@ -6,7 +6,7 @@
 // Step definitions for the wizard flow
 export const EXPENSE_STEPS = ['note', 'card', 'date', 'amount', 'details'];
 // For income, 'details' (Category) is now the first step.
-export const INCOME_STEPS = ['details', 'date', 'amount', 'card', 'note'];
+export const INCOME_STEPS = ['details', 'amount', 'date', 'card', 'note'];
 
 // Initial state for the form data
 export const initialFormData = {
