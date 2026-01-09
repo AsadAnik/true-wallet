@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useTheme } from '@/context/ThemeContext';
 
 interface CategoryItemProps {
     icon: string;
@@ -9,12 +10,15 @@ interface CategoryItemProps {
     name: string;
     progress: string;
     amount: string;
+    styles: any; // Pass styles down
+    isDarkMode: boolean;
 }
 
-const CategoryItem = ({ icon, iconColor, bgColor, name, progress, amount }: CategoryItemProps) => (
+// region CATEGORY ITEM
+const CategoryItem = ({ icon, iconColor, bgColor, name, progress, amount, styles, isDarkMode }: CategoryItemProps) => (
     <View style={styles.categoryItem}>
-        <View style={[styles.categoryIcon, { backgroundColor: bgColor }]}>
-            <FontAwesome name={icon} size={20} color={iconColor}/>
+        <View style={[styles.categoryIcon, { backgroundColor: isDarkMode ? '#333' : bgColor }]}>
+            <FontAwesome name={icon as any} size={20} color={iconColor}/>
         </View>
         <View style={styles.categoryDetails}>
             <Text style={styles.categoryName}>{name}</Text>
@@ -26,7 +30,11 @@ const CategoryItem = ({ icon, iconColor, bgColor, name, progress, amount }: Cate
     </View>
 );
 
+// region TOP SPENDING VIEW
 const TopSpendingView = () => {
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
+
     return (
         <View style={styles.categoriesSection}>
             <Text style={styles.sectionTitle}>Top Spending</Text>
@@ -37,6 +45,8 @@ const TopSpendingView = () => {
                 name="Shopping"
                 progress="60%"
                 amount="-$450"
+                styles={styles}
+                isDarkMode={isDarkMode}
             />
             <CategoryItem
                 icon="cutlery"
@@ -45,6 +55,8 @@ const TopSpendingView = () => {
                 name="Food & Drink"
                 progress="30%"
                 amount="-$220"
+                styles={styles}
+                isDarkMode={isDarkMode}
             />
             <CategoryItem
                 icon="car"
@@ -53,25 +65,28 @@ const TopSpendingView = () => {
                 name="Transport"
                 progress="15%"
                 amount="-$85"
+                styles={styles}
+                isDarkMode={isDarkMode}
             />
         </View>
     );
 };
 
-const styles = StyleSheet.create({
+// region STYLE-SHEET
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     categoriesSection: {
         marginBottom: 20,
     },
     sectionTitle: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#333',
+        color: isDarkMode ? '#fff' : '#333',
         marginBottom: 20,
     },
     categoryItem: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#fff',
+        backgroundColor: isDarkMode ? '#000' : '#fff',
         padding: 16,
         borderRadius: 16,
         marginBottom: 12,
@@ -96,12 +111,12 @@ const styles = StyleSheet.create({
     categoryName: {
         fontSize: 16,
         fontWeight: '600',
-        color: '#333',
+        color: isDarkMode ? '#fff' : '#333',
         marginBottom: 8,
     },
     progressBarBg: {
         height: 6,
-        backgroundColor: '#F0F0F0',
+        backgroundColor: isDarkMode ? '#333' : '#F0F0F0',
         borderRadius: 3,
         width: '100%',
     },

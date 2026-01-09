@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { PieChart } from 'react-native-gifted-charts';
+import { useTheme } from '@/context/ThemeContext';
 
+// region OVERVIEW CHART VIEW
 const OverviewChartView = () => {
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
+
     const pieData = [
         { value: 70, color: '#4CAF50', text: '70%' },
         { value: 30, color: '#F44336', text: '30%' },
@@ -20,12 +25,16 @@ const OverviewChartView = () => {
                         sectionAutoFocus
                         radius={90}
                         innerRadius={60}
-                        innerCircleColor={'#fff'}
+                        innerCircleColor={isDarkMode ? '#000' : '#fff'}
                         centerLabelComponent={() => {
                             return (
                                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ fontSize: 22, color: '#333', fontWeight: 'bold' }}>$3.8k</Text>
-                                    <Text style={{ fontSize: 14, color: '#999' }}>Balance</Text>
+                                    <Text style={{
+                                        fontSize: 22,
+                                        color: isDarkMode ? '#fff' : '#333',
+                                        fontWeight: 'bold'
+                                    }}>$3.8k</Text>
+                                    <Text style={{ fontSize: 14, color: isDarkMode ? '#999' : '#999' }}>Balance</Text>
                                 </View>
                             );
                         }}
@@ -52,9 +61,10 @@ const OverviewChartView = () => {
     );
 };
 
-const styles = StyleSheet.create({
+// region STYLE-SHEET
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     chartSection: {
-        backgroundColor: '#fff',
+        backgroundColor: isDarkMode ? '#000' : '#fff',
         borderRadius: 20,
         padding: 20,
         marginBottom: 24,
@@ -67,7 +77,7 @@ const styles = StyleSheet.create({
     sectionTitle: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#333',
+        color: isDarkMode ? '#fff' : '#333',
         marginBottom: 20,
     },
     chartContainer: {
@@ -91,13 +101,13 @@ const styles = StyleSheet.create({
     },
     legendLabel: {
         fontSize: 14,
-        color: '#666',
+        color: isDarkMode ? '#fff' : '#666',
         marginBottom: 2,
     },
     legendValue: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#333',
+        color: isDarkMode ? '#fff' : '#333',
     },
 });
 

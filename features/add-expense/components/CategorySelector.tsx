@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { View, Text, Pressable, StyleSheet, FlatList } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useTheme } from '@/context/ThemeContext';
 
 const categories = [
   { key: 'salary', text: 'Salary', icon: 'money' },
@@ -18,6 +19,8 @@ interface CategorySelectorProps {
 // region CATEGORY SELECTOR
 const CategorySelector = ({ onSelect }: CategorySelectorProps) => {
   const [selected, setSelected] = useState<string | null>(null);
+  const { isDarkMode } = useTheme();
+  const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
 
   const handleSelect = (key: string) => {
     setSelected(key);
@@ -53,7 +56,7 @@ const CategorySelector = ({ onSelect }: CategorySelectorProps) => {
 };
 
 // region STYLE-SHEET
-const styles = StyleSheet.create({
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
   container: {
     // flex: 1, // This was causing the layout issue
     paddingHorizontal: 10,
@@ -61,7 +64,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
+    color: isDarkMode ? '#fff' : '#333',
     marginBottom: 20,
     textAlign: 'center',
   },
@@ -71,13 +74,13 @@ const styles = StyleSheet.create({
   },
   gridItem: {
     width: '48%', // Slightly less than 50% to account for spacing
-    backgroundColor: '#f8f9fa',
+    backgroundColor: isDarkMode ? '#2C2C2C' : '#f8f9fa',
     borderRadius: 16,
     padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: '#eee',
+    borderColor: isDarkMode ? '#333' : '#eee',
   },
   selectedGridItem: {
     backgroundColor: '#2196F3',
@@ -92,7 +95,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: '#E3F2FD',
+    backgroundColor: isDarkMode ? '#333' : '#E3F2FD',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
@@ -103,7 +106,7 @@ const styles = StyleSheet.create({
   itemText: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: isDarkMode ? '#fff' : '#333',
   },
   selectedItemText: {
     color: '#fff',

@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet, TextInput, ScrollView, FlatList } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import ColorSelector from './ColorSelector';
+import { useTheme } from '@/context/ThemeContext';
 
 // A curated list of FontAwesome icons
 const iconNames = [
@@ -14,11 +15,14 @@ interface IconPickerProps {
     onSelect: (icon: string, color: string) => void;
 }
 
+// region ICON PICKER
 const IconPicker = ({ onSelect }: IconPickerProps) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedIcon, setSelectedIcon] = useState('shopping-cart');
     const [selectedColor, setSelectedColor] = useState('#FF9800');
     const [searchTerm, setSearchTerm] = useState('');
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
 
     const filteredIcons = useMemo(() => {
         return iconNames.filter(name => name.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -48,7 +52,7 @@ const IconPicker = ({ onSelect }: IconPickerProps) => {
                     <View style={styles.header}>
                         <Text style={styles.headerTitle}>Select an Icon</Text>
                         <TouchableOpacity onPress={() => setModalVisible(false)}>
-                            <FontAwesome name="close" size={24} color="#333"/>
+                            <FontAwesome name="close" size={24} color={isDarkMode ? '#fff' : '#333'}/>
                         </TouchableOpacity>
                     </View>
 
@@ -63,6 +67,7 @@ const IconPicker = ({ onSelect }: IconPickerProps) => {
                     <TextInput
                         style={styles.searchInput}
                         placeholder="Search for an icon..."
+                        placeholderTextColor={isDarkMode ? '#999' : '#999'}
                         value={searchTerm}
                         onChangeText={setSearchTerm}
                     />
@@ -74,7 +79,7 @@ const IconPicker = ({ onSelect }: IconPickerProps) => {
                         contentContainerStyle={styles.iconGrid}
                         renderItem={({ item }) => (
                             <TouchableOpacity style={styles.iconWrapper} onPress={() => setSelectedIcon(item)}>
-                                <FontAwesome name={item as any} size={30} color="#333"/>
+                                <FontAwesome name={item as any} size={30} color={isDarkMode ? '#fff' : '#333'}/>
                             </TouchableOpacity>
                         )}
                     />
@@ -88,11 +93,12 @@ const IconPicker = ({ onSelect }: IconPickerProps) => {
     );
 };
 
-const styles = StyleSheet.create({
+// region STYLE-SHEET
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     pickerButton: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#f5f5f5',
+        backgroundColor: isDarkMode ? '#1E1E1E' : '#f5f5f5',
         borderRadius: 10,
         padding: 10,
         marginBottom: 20,
@@ -108,10 +114,11 @@ const styles = StyleSheet.create({
     pickerButtonText: {
         fontSize: 16,
         fontWeight: '600',
+        color: isDarkMode ? '#fff' : '#000',
     },
     modalContainer: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: isDarkMode ? '#121212' : '#fff',
         paddingTop: 60,
     },
     header: {
@@ -124,6 +131,7 @@ const styles = StyleSheet.create({
     headerTitle: {
         fontSize: 22,
         fontWeight: 'bold',
+        color: isDarkMode ? '#fff' : '#000',
     },
     previewSection: {
         alignItems: 'center',
@@ -142,11 +150,12 @@ const styles = StyleSheet.create({
         elevation: 10,
     },
     searchInput: {
-        backgroundColor: '#f0f0f0',
+        backgroundColor: isDarkMode ? '#1E1E1E' : '#f0f0f0',
         borderRadius: 10,
         padding: 15,
         margin: 20,
         fontSize: 16,
+        color: isDarkMode ? '#fff' : '#000',
     },
     iconGrid: {
         alignItems: 'center',

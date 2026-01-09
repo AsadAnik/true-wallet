@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import { CreditCard } from '@/components/widgets';
+import { useTheme } from '@/context/ThemeContext';
 
 const { width } = Dimensions.get('window');
 
@@ -17,6 +18,9 @@ interface CardSelectorProps {
 
 // region CARD SELECTOR
 const CardSelector = ({ selectedCard, onSelect }: CardSelectorProps) => {
+  const { isDarkMode } = useTheme();
+  const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
+
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Select a Card to Use</Text>
@@ -43,14 +47,14 @@ const CardSelector = ({ selectedCard, onSelect }: CardSelectorProps) => {
 };
 
 // region STYLE-SHEET
-const styles = StyleSheet.create({
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
   container: {
     marginBottom: 20,
   },
   label: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#666',
+    color: isDarkMode ? '#fff' : '#666',
     marginBottom: 15,
     paddingHorizontal: 20,
   },

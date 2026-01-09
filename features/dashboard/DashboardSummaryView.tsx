@@ -1,13 +1,17 @@
-import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useMemo } from 'react';
+import { useTheme } from '@/context/ThemeContext';
 
 interface SummaryCardProps {
     type: 'Income' | 'Expense';
     amount: string;
 }
 
+// region SUMMARY CARD
 const SummaryCard = ({ type, amount }: SummaryCardProps) => {
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
     const isIncome = type === 'Income';
     const iconName = isIncome ? 'arrow-down' : 'arrow-up';
     const iconColor = isIncome ? '#4CAF50' : '#F44336';
@@ -26,7 +30,12 @@ const SummaryCard = ({ type, amount }: SummaryCardProps) => {
     );
 };
 
+
+// region SUMMARY VIEW
 const DashboardSummaryView = () => {
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
+
     return (
         <View style={styles.summaryContainer}>
             <SummaryCard type="Income" amount="$5,240.00"/>
@@ -35,7 +44,8 @@ const DashboardSummaryView = () => {
     );
 };
 
-const styles = StyleSheet.create({
+// region STYLE-SHEET
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     summaryContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -43,7 +53,7 @@ const styles = StyleSheet.create({
     },
     summaryCard: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: isDarkMode ? '#000' : '#fff',
         borderRadius: 16,
         padding: 16,
         flexDirection: 'row',
@@ -59,7 +69,7 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         borderRadius: 20,
-        backgroundColor: '#E8F5E9',
+        backgroundColor: isDarkMode ? '#1e1e1e' : '#E8F5E9',
         justifyContent: 'center',
         alignItems: 'center',
         marginRight: 12,
@@ -68,20 +78,20 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         borderRadius: 20,
-        backgroundColor: '#FFEBEE',
+        backgroundColor: isDarkMode ? '#1e1e1e' : '#E8F5E9',
         justifyContent: 'center',
         alignItems: 'center',
         marginRight: 12,
     },
     summaryLabel: {
         fontSize: 12,
-        color: '#999',
+        color: isDarkMode ? '#fff' : '#999',
         marginBottom: 4,
     },
     summaryAmount: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#333',
+        color: isDarkMode ? '#E8F5E9' : '#333',
     },
 });
 

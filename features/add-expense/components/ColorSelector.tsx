@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Pressable, StyleSheet, ScrollView } from 'react-native';
+import { useTheme } from '@/context/ThemeContext';
 
 const colors = [
     '#FF9800', '#2196F3', '#9C27B0', '#E91E63', '#795548',
@@ -13,6 +14,9 @@ interface ColorSelectorProps {
 
 // region COLOR SELECTOR
 const ColorSelector = ({ selectedColor, onSelect }: ColorSelectorProps) => {
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
+
     return (
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.container}>
             {colors.map(color => {
@@ -30,7 +34,7 @@ const ColorSelector = ({ selectedColor, onSelect }: ColorSelectorProps) => {
 };
 
 // region STYLE-SHEET
-const styles = StyleSheet.create({
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     container: {
         paddingHorizontal: 20,
         paddingVertical: 10,
@@ -44,7 +48,7 @@ const styles = StyleSheet.create({
     },
     selectedCircle: {
         borderWidth: 3,
-        borderColor: '#fff',
+        borderColor: isDarkMode ? '#fff' : '#fff', // White border works well on both, but keeping pattern
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.3,

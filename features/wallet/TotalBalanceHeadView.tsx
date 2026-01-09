@@ -1,8 +1,13 @@
 import { StyleSheet, Text, View } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import React from "react";
+import React, { useMemo } from "react";
+import { useTheme } from '@/context/ThemeContext';
 
+// region TOTAL BALANCE VIEW
 const TotalBalanceHeadView = () => {
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
+
     return (
         <View style={styles.balanceContainer}>
             <Text style={styles.balanceLabel}>Total Balance</Text>
@@ -18,21 +23,21 @@ const TotalBalanceHeadView = () => {
     )
 };
 
-
-const styles = StyleSheet.create({
+// region STYLE-SHEET
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     balanceContainer: {
         padding: 20,
         alignItems: 'center',
     },
     balanceLabel: {
         fontSize: 16,
-        color: '#666',
+        color: isDarkMode ? '#999' : '#666',
         marginBottom: 8,
     },
     balanceAmount: {
         fontSize: 36,
         fontWeight: 'bold',
-        color: '#333',
+        color: isDarkMode ? '#fff' : '#333',
         marginBottom: 10,
     },
     percentageContainer: {
@@ -42,7 +47,7 @@ const styles = StyleSheet.create({
     percentageBadge: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#E8F5E9',
+        backgroundColor: isDarkMode ? '#1e1e1e' : '#E8F5E9',
         paddingHorizontal: 8,
         paddingVertical: 4,
         borderRadius: 12,

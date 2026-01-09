@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { View, Text, Pressable, Modal, StyleSheet, Button, Platform } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useTheme } from '@/context/ThemeContext';
 
 const currencies = [
     { label: 'BDT (৳)', value: 'BDT', symbol: '৳' },
@@ -22,6 +23,8 @@ interface CurrencySelectorProps {
 const CurrencySelector = ({ onSelect }: CurrencySelectorProps) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedCurrency, setSelectedCurrency] = useState('BDT'); // Set BDT as default
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
 
     const handleValueChange = (itemValue: string) => {
         const currency = currencies.find(c => c.value === itemValue);
@@ -37,7 +40,7 @@ const CurrencySelector = ({ onSelect }: CurrencySelectorProps) => {
         <>
             <Pressable style={styles.button} onPress={() => setModalVisible(true)}>
                 <Text style={styles.buttonText}>{selectedCurrencyObject?.label || 'Select Currency'}</Text>
-                <FontAwesome name="chevron-down" size={12} color="#666"/>
+                <FontAwesome name="chevron-down" size={12} color={isDarkMode ? '#999' : '#666'}/>
             </Pressable>
 
             <Modal
@@ -53,17 +56,18 @@ const CurrencySelector = ({ onSelect }: CurrencySelectorProps) => {
                             onValueChange={handleValueChange}
                             style={styles.picker}
                             itemStyle={styles.pickerItem}
+                            dropdownIconColor={isDarkMode ? '#fff' : '#000'}
                         >
                             {currencies.map(currency => (
                                 <Picker.Item
                                     key={currency.value}
                                     label={currency.label}
                                     value={currency.value}
-                                    color={Platform.OS === 'android' ? '#333' : undefined}
+                                    color={Platform.OS === 'android' ? (isDarkMode ? '#fff' : '#333') : undefined}
                                 />
                             ))}
                         </Picker>
-                        <Button title="Done" onPress={() => setModalVisible(false)}/>
+                        <Button title="Done" onPress={() => setModalVisible(false)} color={isDarkMode ? '#2196F3' : '#2196F3'}/>
                     </View>
                 </View>
             </Modal>
@@ -72,18 +76,19 @@ const CurrencySelector = ({ onSelect }: CurrencySelectorProps) => {
 };
 
 // region STYLE-SHEET
-const styles = StyleSheet.create({
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     button: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        backgroundColor: '#f5f5f5',
+        backgroundColor: isDarkMode ? '#1E1E1E' : '#f5f5f5',
         borderRadius: 10,
         padding: 15,
         height: 50,
     },
     buttonText: {
         fontSize: 16,
+        color: isDarkMode ? '#fff' : '#000',
     },
     modalContainer: {
         flex: 1,
@@ -91,7 +96,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
     },
     modalContent: {
-        backgroundColor: 'white',
+        backgroundColor: isDarkMode ? '#1E1E1E' : 'white',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         padding: 20,
@@ -103,9 +108,10 @@ const styles = StyleSheet.create({
     },
     picker: {
         width: '100%',
+        backgroundColor: isDarkMode ? '#1E1E1E' : 'white',
     },
     pickerItem: {
-        color: '#000',
+        color: isDarkMode ? '#fff' : '#000',
     },
 });
 

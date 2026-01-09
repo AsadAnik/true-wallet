@@ -1,20 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, useColorScheme } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useTheme } from '@/context/ThemeContext';
 
 interface CustomHeaderProps {
   title: string;
   headerRight?: React.ReactNode;
 }
 
+// region TOGGLE BUTTON
 const ThemeToggleButton = () => {
-  const colorScheme = useColorScheme();
-  const isDarkMode = colorScheme === 'dark';
-
-  const toggleTheme = () => {
-    console.log('Toggle theme');
-  };
+  const { toggleTheme, isDarkMode } = useTheme();
 
   return (
     <TouchableOpacity onPress={toggleTheme} style={styles.rightButton}>
@@ -27,12 +24,15 @@ const ThemeToggleButton = () => {
   );
 };
 
+// region CUSTOM HEADER
 export default function CustomHeader({ title, headerRight }: CustomHeaderProps) {
+  const { isDarkMode } = useTheme();
+
   return (
-    <SafeAreaView edges={['top']} style={styles.safeArea}>
-      <View style={styles.container}>
+    <SafeAreaView edges={['top']} style={[styles.safeArea, isDarkMode && styles.safeAreaDark]}>
+      <View style={[styles.container, isDarkMode && styles.containerDark]}>
         <View style={styles.leftPlaceholder} />
-        <Text style={styles.title}>{title}</Text>
+        <Text style={[styles.title, isDarkMode && styles.titleDark]}>{title}</Text>
         <View style={styles.rightContainer}>
           {headerRight || <ThemeToggleButton />}
         </View>
@@ -41,9 +41,13 @@ export default function CustomHeader({ title, headerRight }: CustomHeaderProps) 
   );
 }
 
+// region STYLE-SHEET
 const styles = StyleSheet.create({
   safeArea: {
     backgroundColor: '#fff',
+  },
+  safeAreaDark: {
+    backgroundColor: '#121212',
   },
   container: {
     height: 56,
@@ -54,6 +58,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
   },
+  containerDark: {
+    borderBottomColor: '#333',
+  },
   leftPlaceholder: {
     width: 40,
   },
@@ -61,6 +68,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#333',
+  },
+  titleDark: {
+    color: '#fff',
   },
   rightContainer: {
     width: 40,

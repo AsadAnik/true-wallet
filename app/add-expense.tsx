@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { View, StyleSheet, SafeAreaView, Text, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import { AddExpenseTabs, ExpenseIncomeForm } from '@/features/add-expense';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useTheme } from '@/context/ThemeContext';
 
 // region ADD EXPENSE
 const AddExpenseScreen = () => {
     const router = useRouter();
     const [activeTab, setActiveTab] = useState<'expense' | 'income'>('expense');
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
 
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => router.back()} style={styles.closeButton}>
-                    <FontAwesome name="close" size={24} color="#333"/>
+                    <FontAwesome name="close" size={24} color={isDarkMode ? '#fff' : '#333'}/>
                 </TouchableOpacity>
                 <Text style={styles.headerTitle}>Add Transaction</Text>
             </View>
@@ -25,10 +28,10 @@ const AddExpenseScreen = () => {
 }
 
 // region STYLE-SHEET
-const styles = StyleSheet.create({
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: isDarkMode ? '#121212' : '#fff',
     },
     header: {
         flexDirection: 'row',
@@ -41,10 +44,12 @@ const styles = StyleSheet.create({
     closeButton: {
         position: 'absolute',
         left: 20,
+        top: 30,
     },
     headerTitle: {
         fontSize: 18,
         fontWeight: 'bold',
+        color: isDarkMode ? '#fff' : '#333',
     },
 });
 

@@ -1,21 +1,27 @@
-import React from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
 import { DashboardSummaryView, OverviewChartView, TopSpendingView } from '@/features/dashboard';
+import { useMemo } from 'react';
+import { useTheme } from '@/context/ThemeContext';
 
+// region DASHBOARD SCREEN
 export default function DashboardScreen() {
-  return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <DashboardSummaryView />
-      <OverviewChartView />
-      <TopSpendingView />
-    </ScrollView>
-  );
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
+
+    return (
+        <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+            <DashboardSummaryView/>
+            <OverviewChartView/>
+            <TopSpendingView/>
+        </ScrollView>
+    );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F8F9FA',
-    padding: 20,
-  },
+// region STYLE-SHEET
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: isDarkMode ? '#121212' : '#F8F9FA',
+        padding: 20,
+    },
 });

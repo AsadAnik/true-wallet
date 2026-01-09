@@ -1,16 +1,21 @@
-import React, { useState, useEffect, useRef } from "react";
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View, Dimensions } from "react-native";
+import React, { useState, useEffect, useRef, useMemo } from "react";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { useTheme } from '@/context/ThemeContext';
 
 interface CalendarStripProps {
     selectedDate: string;
     onSelectDate: (date: string) => void;
 }
 
-// region CALENDER STRIP
+// region CALENDAR STRIP
 const CalendarStrip = ({ selectedDate, onSelectDate }: CalendarStripProps) => {
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const scrollViewRef = useRef<ScrollView>(null);
+    const { isDarkMode } = useTheme();
+
+    // Memoize styles to avoid recreation on every render, recalculating only when theme changes
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
 
     // Generate days for the current month
     const getDaysInMonth = (date: Date) => {
@@ -43,24 +48,23 @@ const CalendarStrip = ({ selectedDate, onSelectDate }: CalendarStripProps) => {
 
     // Scroll to selected date or today when month changes
     useEffect(() => {
-        // Simple logic to scroll to start or selected date
-        // In a real implementation, we'd calculate exact offset
         if (scrollViewRef.current) {
             scrollViewRef.current.scrollTo({ x: 0, animated: true });
         }
     }, [currentMonth]);
 
+    // region MAIN-UI
     return (
         <View style={styles.calendarContainer}>
             <View style={styles.monthHeader}>
                 <TouchableOpacity onPress={() => changeMonth(-1)} style={styles.arrowButton}>
-                    <FontAwesome name="chevron-left" size={16} color="#333" />
+                    <FontAwesome name="chevron-left" size={16} color={isDarkMode ? '#fff' : '#333'} />
                 </TouchableOpacity>
 
                 <Text style={styles.monthText}>{displayMonth}</Text>
 
                 <TouchableOpacity onPress={() => changeMonth(1)} style={styles.arrowButton}>
-                    <FontAwesome name="chevron-right" size={16} color="#333" />
+                    <FontAwesome name="chevron-right" size={16} color={isDarkMode ? '#fff' : '#333'} />
                 </TouchableOpacity>
             </View>
 
@@ -100,11 +104,11 @@ const CalendarStrip = ({ selectedDate, onSelectDate }: CalendarStripProps) => {
     );
 };
 
-// region STYLE-SHEET
-const styles = StyleSheet.create({
+// region STYLE-SHEET GENERATOR
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     calendarContainer: {
         paddingVertical: 15,
-        backgroundColor: '#fff',
+        backgroundColor: isDarkMode ? '#1E1E1E' : '#fff',
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
         shadowColor: '#000',
@@ -124,7 +128,7 @@ const styles = StyleSheet.create({
     monthText: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#333',
+        color: isDarkMode ? '#fff' : '#333',
     },
     arrowButton: {
         padding: 10,
@@ -139,7 +143,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 16,
         marginRight: 12,
-        backgroundColor: '#F8F9FA',
+        backgroundColor: isDarkMode ? '#2C2C2C' : '#F8F9FA',
     },
     dateItemSelected: {
         backgroundColor: '#2196F3',
@@ -152,18 +156,18 @@ const styles = StyleSheet.create({
     dateItemToday: {
         borderWidth: 1,
         borderColor: '#2196F3',
-        backgroundColor: '#fff',
+        backgroundColor: isDarkMode ? '#1E1E1E' : '#fff',
     },
     dateWeekday: {
         fontSize: 12,
-        color: '#999',
+        color: isDarkMode ? '#AAA' : '#999',
         marginBottom: 6,
         fontWeight: '500',
     },
     dateDay: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#333',
+        color: isDarkMode ? '#fff' : '#333',
     },
     textSelected: {
         color: '#fff',

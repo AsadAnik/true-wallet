@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useTheme } from '@/context/ThemeContext';
 
 interface AddExpenseTabsProps {
   activeTab: 'expense' | 'income';
@@ -8,6 +9,9 @@ interface AddExpenseTabsProps {
 }
 
 const AddExpenseTabs = ({ activeTab, onTabChange }: AddExpenseTabsProps) => {
+  const { isDarkMode } = useTheme();
+  const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -28,11 +32,11 @@ const AddExpenseTabs = ({ activeTab, onTabChange }: AddExpenseTabsProps) => {
   );
 };
 
-const styles = StyleSheet.create({
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'center',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: isDarkMode ? '#333' : '#f0f0f0',
     borderRadius: 30,
     margin: 20,
     padding: 4,
@@ -57,7 +61,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#333',
+    color: isDarkMode ? '#fff' : '#333',
   },
   activeTabText: {
     color: '#fff',

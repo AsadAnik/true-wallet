@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { BarChart } from "react-native-gifted-charts";
-import React from "react";
+import React, { useMemo } from "react";
+import { useTheme } from '@/context/ThemeContext';
 
 const { width } = Dimensions.get('window');
 
@@ -16,7 +17,11 @@ interface AnalyticsChartViewProps {
     barData: BarDataItem[];
 }
 
+// region ANALYTICS CHART VIEW
 const AnalyticsChartView = ({ barData }: AnalyticsChartViewProps) => {
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
+
     return (
         <View style={styles.chartSection}>
             <View style={styles.sectionHeader}>
@@ -32,22 +37,24 @@ const AnalyticsChartView = ({ barData }: AnalyticsChartViewProps) => {
                     barWidth={22}
                     noOfSections={3}
                     barBorderRadius={4}
-                    frontColor="lightgray"
+                    frontColor={isDarkMode ? '#555' : 'lightgray'}
                     yAxisThickness={0}
                     xAxisThickness={0}
                     hideRules
                     height={150}
                     width={width - 80} // Adjust width based on padding
-                    topLabelTextStyle={{ color: '#999', fontSize: 12 }}
+                    topLabelTextStyle={{ color: isDarkMode ? '#999' : '#999', fontSize: 12 }}
+                    yAxisTextStyle={{ color: isDarkMode ? '#999' : '#999' }}
                 />
             </View>
         </View>
     );
 };
 
-const styles = StyleSheet.create({
+// region STYLE-SHEET
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     chartSection: {
-        backgroundColor: '#fff',
+        backgroundColor: isDarkMode ? '#000' : '#fff',
         margin: 20,
         padding: 20,
         borderRadius: 20,
@@ -66,7 +73,7 @@ const styles = StyleSheet.create({
     sectionTitle: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#333',
+        color: isDarkMode ? '#fff' : '#333',
     },
     seeAll: {
         color: '#2196F3',

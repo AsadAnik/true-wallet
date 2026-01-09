@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
 import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import { CardSelector, CurrencySelector, IconPicker, CategorySelector } from './components';
 import CalendarStrip from '@/components/ui/CalendarStrip';
 import { EXPENSE_STEPS, INCOME_STEPS, initialFormData, STEP_DESCRIPTIONS } from './IncomeExpense.constants';
 import { Ionicons } from '@expo/vector-icons';
+import { useTheme } from '@/context/ThemeContext';
 
 const { width } = Dimensions.get('window');
 
@@ -15,6 +16,8 @@ const ExpenseIncomeForm = ({ type }: { type: 'expense' | 'income' }) => {
     const [currentStep, setCurrentStep] = useState(0);
     const [formData, setFormData] = useState(initialFormData);
     const translateX = useSharedValue(0);
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
 
     useEffect(() => {
         setCurrentStep(0);
@@ -66,11 +69,11 @@ const ExpenseIncomeForm = ({ type }: { type: 'expense' | 'income' }) => {
             case 'note':
                 return (
                     <View style={{ padding: 20 }}>
-                        <Text
-                            style={styles.label}>{isExpense ? "What was this expense for?" : "Add a note (optional)"}</Text>
+                        <Text style={styles.label}>{isExpense ? "What was this expense for?" : "Add a note (optional)"}</Text>
                         <TextInput
                             style={styles.noteInput}
                             placeholder="e.g., Coffee with friends"
+                            placeholderTextColor={isDarkMode ? '#666' : '#ccc'}
                             value={formData.note}
                             onChangeText={(val) => updateFormData('note', val)}
                             autoFocus={true}
@@ -107,6 +110,7 @@ const ExpenseIncomeForm = ({ type }: { type: 'expense' | 'income' }) => {
                                 style={styles.amountInput}
                                 placeholder="0.00"
                                 keyboardType="numeric"
+                                placeholderTextColor={isDarkMode ? '#666' : '#ccc'}
                                 value={formData.amount}
                                 onChangeText={(val) => updateFormData('amount', val)}
                                 autoFocus={true}
@@ -139,9 +143,6 @@ const ExpenseIncomeForm = ({ type }: { type: 'expense' | 'income' }) => {
     // region Main UI
     return (
         <View style={styles.container}>
-            {/* Static Header for Back Button */}
-            <View style={styles.header} />
-
             <View style={styles.contentContainer}>
                 <Animated.View style={[styles.animatedContainer, animatedStyle]}>
                     <ScrollView showsVerticalScrollIndicator={false}>
@@ -158,7 +159,7 @@ const ExpenseIncomeForm = ({ type }: { type: 'expense' | 'income' }) => {
             <View style={styles.bottomNav}>
                 {currentStep > 0 && (
                     <TouchableOpacity onPress={handleBack} style={styles.bottomBackButton}>
-                        <Ionicons name="arrow-back-circle" size={44} color="#333" />
+                        <Ionicons name="arrow-back-circle" size={44} color={isDarkMode ? '#fff' : '#333'} />
                     </TouchableOpacity>
                 )}
                 {steps[currentStep] !== 'card' && (
@@ -172,13 +173,10 @@ const ExpenseIncomeForm = ({ type }: { type: 'expense' | 'income' }) => {
 };
 
 // region STYLE-SHEET
-const styles = StyleSheet.create({
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-    },
-    header: {
-        height: 20, // Keep a small header area for spacing
+        backgroundColor: isDarkMode ? '#121212' : '#fff',
     },
     contentContainer: {
         flex: 1,
@@ -195,22 +193,23 @@ const styles = StyleSheet.create({
     },
     descriptionText: {
         fontSize: 14,
-        color: '#666',
+        color: isDarkMode ? '#999' : '#666',
         textAlign: 'center',
     },
     label: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: '#333',
+        color: isDarkMode ? '#fff' : '#333',
         marginBottom: 20,
         textAlign: 'center',
     },
     noteInput: {
         fontSize: 20,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: isDarkMode ? '#1E1E1E' : '#f5f5f5',
         borderRadius: 10,
         padding: 20,
         textAlign: 'center',
+        color: isDarkMode ? '#fff' : '#000',
     },
     amountInputRow: {
         flexDirection: 'row',
@@ -224,6 +223,7 @@ const styles = StyleSheet.create({
         textAlign: 'right',
         flex: 1,
         marginLeft: 15,
+        color: isDarkMode ? '#fff' : '#000',
     },
     // New Bottom Navigation Styles
     bottomNav: {
@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 10,
         borderTopWidth: 1,
-        borderTopColor: '#f0f0f0',
+        borderTopColor: isDarkMode ? '#333' : '#f0f0f0',
     },
     bottomBackButton: {
         // The icon provides enough visual weight

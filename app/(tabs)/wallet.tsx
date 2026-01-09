@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
 import { TotalBalanceHeadView, CreditCardsView, AnalyticsChartView } from '@/features/wallet';
+import { useTheme } from '@/context/ThemeContext';
 
 // Mock data for the chart
 const barData = [
@@ -13,25 +14,30 @@ const barData = [
     { value: 40, label: 'Sun' },
 ];
 
+// region WALLET SCREEN
 const WalletScreen = () => {
+    const { isDarkMode } = useTheme();
+    const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
+
     return (
         <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
             {/* Total Balance Section */}
-            <TotalBalanceHeadView />
+            <TotalBalanceHeadView/>
 
             {/* Cards Carousel */}
-            <CreditCardsView />
+            <CreditCardsView/>
 
             {/* Analytics Chart Section */}
-            <AnalyticsChartView barData={barData}  />
+            <AnalyticsChartView barData={barData}/>
         </ScrollView>
     );
 }
 
-const styles = StyleSheet.create({
+// region STYLE-SHEET
+const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F8F9FA',
+        backgroundColor: isDarkMode ? '#121212' : '#F8F9FA',
     },
 });
 
