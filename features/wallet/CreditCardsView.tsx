@@ -1,8 +1,8 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { CreditCard } from '@/components/widgets';
 
-const cards = [
+export const cards = [
     {
         key: 'card1',
         name: 'True Bank',
@@ -23,22 +23,37 @@ const cards = [
     },
 ];
 
+interface CreditCardsViewProps {
+    selectedCardId: string;
+    onSelectCard: (id: string) => void;
+}
+
 // region CREDIT CARDS VIEW
-const CreditCardsView = () => {
+const CreditCardsView = ({ selectedCardId, onSelectCard }: CreditCardsViewProps) => {
     return (
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.cardsScroll}>
-            {cards.map(card => (
-                <CreditCard
-                    key={card.key}
-                    bank={card.name}
-                    number={card.number}
-                    type={card.type as any}
-                    colors={card.colors}
-                    cardHolder={card.holder}
-                    expires={card.expires}
-                    style={styles.card}
-                />
-            ))}
+            {cards.map(card => {
+                const isSelected = selectedCardId === card.key;
+                return (
+                    <TouchableOpacity 
+                        key={card.key} 
+                        onPress={() => onSelectCard(card.key)}
+                        activeOpacity={0.8}
+                    >
+                        <View style={[styles.cardContainer, isSelected && styles.selectedCard]}>
+                            <CreditCard
+                                bank={card.name}
+                                number={card.number}
+                                type={card.type as any}
+                                colors={card.colors}
+                                cardHolder={card.holder}
+                                expires={card.expires}
+                                style={styles.card}
+                            />
+                        </View>
+                    </TouchableOpacity>
+                );
+            })}
         </ScrollView>
     );
 };
@@ -49,8 +64,21 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingBottom: 20,
     },
-    card: {
+    cardContainer: {
         marginRight: 16,
+        borderRadius: 20,
+    },
+    selectedCard: {
+        borderWidth: 3,
+        borderColor: '#2196F3', // Highlight color for selected card
+        shadowColor: '#2196F3',
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.5,
+        shadowRadius: 10,
+        elevation: 10,
+    },
+    card: {
+        // The margin is now handled by cardContainer
     },
 });
 

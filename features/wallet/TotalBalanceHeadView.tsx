@@ -3,19 +3,25 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import React, { useMemo } from "react";
 import { useTheme } from '@/context/ThemeContext';
 
+interface TotalBalanceHeadViewProps {
+    balance: string;
+    percentage: string;
+    isPositive: boolean;
+}
+
 // region TOTAL BALANCE VIEW
-const TotalBalanceHeadView = () => {
+const TotalBalanceHeadView = ({ balance, percentage, isPositive }: TotalBalanceHeadViewProps) => {
     const { isDarkMode } = useTheme();
     const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
 
     return (
         <View style={styles.balanceContainer}>
             <Text style={styles.balanceLabel}>Total Balance</Text>
-            <Text style={styles.balanceAmount}>$24,500.00</Text>
+            <Text style={styles.balanceAmount}>{balance}</Text>
             <View style={styles.percentageContainer}>
-                <View style={styles.percentageBadge}>
-                    <FontAwesome name="arrow-up" size={12} color="#4CAF50"/>
-                    <Text style={styles.percentageText}>+15%</Text>
+                <View style={[styles.percentageBadge, { backgroundColor: isPositive ? (isDarkMode ? '#1e1e1e' : '#E8F5E9') : (isDarkMode ? '#330000' : '#FFEBEE') }]}>
+                    <FontAwesome name={isPositive ? "arrow-up" : "arrow-down"} size={12} color={isPositive ? "#4CAF50" : "#F44336"}/>
+                    <Text style={[styles.percentageText, { color: isPositive ? "#4CAF50" : "#F44336" }]}>{percentage}</Text>
                 </View>
                 <Text style={styles.percentageLabel}>vs last month</Text>
             </View>
@@ -47,14 +53,12 @@ const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     percentageBadge: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: isDarkMode ? '#1e1e1e' : '#E8F5E9',
         paddingHorizontal: 8,
         paddingVertical: 4,
         borderRadius: 12,
         marginRight: 8,
     },
     percentageText: {
-        color: '#4CAF50',
         fontWeight: 'bold',
         fontSize: 12,
         marginLeft: 4,

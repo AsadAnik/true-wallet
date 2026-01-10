@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
 import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import { CardSelector, CurrencySelector, IconPicker, CategorySelector } from './components';
-import CalendarStrip from '@/components/ui/CalendarStrip';
+import { CalendarStrip } from '@/components/ui';
 import { EXPENSE_STEPS, INCOME_STEPS, initialFormData, STEP_DESCRIPTIONS } from './IncomeExpense.constants';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '@/context/ThemeContext';

@@ -67,7 +67,8 @@ const CurrencySelector = ({ onSelect }: CurrencySelectorProps) => {
                                 />
                             ))}
                         </Picker>
-                        <Button title="Done" onPress={() => setModalVisible(false)} color={isDarkMode ? '#2196F3' : '#2196F3'}/>
+                        <Button title="Done" onPress={() => setModalVisible(false)}
+                                color={isDarkMode ? '#2196F3' : '#2196F3'}/>
                     </View>
                 </View>
             </Modal>

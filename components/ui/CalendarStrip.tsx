@@ -17,11 +17,15 @@ const CalendarStrip = ({ selectedDate, onSelectDate }: CalendarStripProps) => {
     // Memoize styles to avoid recreation on every render, recalculating only when theme changes
     const styles = useMemo(() => createStyles(isDarkMode), [isDarkMode]);
 
-    // Generate days for the current month
+    /**
+     * GET DAYS IN MONTH
+     * @param date
+     */
+    // region Days In Month
     const getDaysInMonth = (date: Date) => {
-        const year = date.getFullYear();
-        const month = date.getMonth();
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const year: number = date.getFullYear();
+        const month: number = date.getMonth();
+        const daysInMonth: number = new Date(year, month + 1, 0).getDate();
         const days = [];
 
         for (let i = 1; i <= daysInMonth; i++) {
@@ -33,17 +37,25 @@ const CalendarStrip = ({ selectedDate, onSelectDate }: CalendarStripProps) => {
                 isToday: d.toDateString() === new Date().toDateString(),
             });
         }
+
         return days;
     };
 
+    // region Days
     const days = getDaysInMonth(currentMonth);
 
+    /**
+     * CHANGE MONTH BY VALUE
+     * @param increment
+     */
+    // region Change Month
     const changeMonth = (increment: number) => {
         const newDate = new Date(currentMonth);
         newDate.setMonth(newDate.getMonth() + increment);
         setCurrentMonth(newDate);
     };
 
+    // region Display Month
     const displayMonth = currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
     // Scroll to selected date or today when month changes
@@ -58,13 +70,13 @@ const CalendarStrip = ({ selectedDate, onSelectDate }: CalendarStripProps) => {
         <View style={styles.calendarContainer}>
             <View style={styles.monthHeader}>
                 <TouchableOpacity onPress={() => changeMonth(-1)} style={styles.arrowButton}>
-                    <FontAwesome name="chevron-left" size={16} color={isDarkMode ? '#fff' : '#333'} />
+                    <FontAwesome name="chevron-left" size={16} color={isDarkMode ? '#fff' : '#333'}/>
                 </TouchableOpacity>
 
                 <Text style={styles.monthText}>{displayMonth}</Text>
 
                 <TouchableOpacity onPress={() => changeMonth(1)} style={styles.arrowButton}>
-                    <FontAwesome name="chevron-right" size={16} color={isDarkMode ? '#fff' : '#333'} />
+                    <FontAwesome name="chevron-right" size={16} color={isDarkMode ? '#fff' : '#333'}/>
                 </TouchableOpacity>
             </View>
 
@@ -93,8 +105,7 @@ const CalendarStrip = ({ selectedDate, onSelectDate }: CalendarStripProps) => {
                                 {date.day}
                             </Text>
                             {date.isToday && (
-                                <View
-                                    style={[styles.dot, isSelected ? { backgroundColor: '#fff' } : { backgroundColor: '#2196F3' }]}/>
+                                <View style={[styles.dot, isSelected ? { backgroundColor: '#fff' } : { backgroundColor: '#2196F3' }]}/>
                             )}
                         </TouchableOpacity>
                     );
@@ -143,7 +154,7 @@ const createStyles = (isDarkMode: boolean) => StyleSheet.create({
         alignItems: 'center',
         borderRadius: 16,
         marginRight: 12,
-        backgroundColor: isDarkMode ? '#2C2C2C' : '#F8F9FA',
+        backgroundColor: isDarkMode ? '#000' : '#F8F9FA',
     },
     dateItemSelected: {
         backgroundColor: '#2196F3',

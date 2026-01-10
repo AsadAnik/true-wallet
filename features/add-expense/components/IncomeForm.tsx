@@ -7,6 +7,7 @@ import { CategorySelector, CardSelector } from './';
  * It contains only the fields relevant to income, like the category and an optional note.
  * This follows the single-responsibility principle.
  */
+// region INCOME FORM
 const IncomeForm = () => {
     return (
         <View>
@@ -25,6 +26,7 @@ const IncomeForm = () => {
     );
 };
 
+// region STYLE-SHEET
 const styles = StyleSheet.create({
     input: {
         backgroundColor: '#f5f5f5',

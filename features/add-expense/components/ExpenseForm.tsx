@@ -5,8 +5,9 @@ import { IconPicker } from './';
 /**
  * @description A form component for the details of an expense, shown *after* a card is selected.
  */
+// region EXPENSE FORM
 const ExpenseForm = () => {
-    const [expenseIcon, setExpenseIcon] = useState({ icon: 'shopping-cart', color: '#FF9800' });
+    const [_expenseIcon, setExpenseIcon] = useState({ icon: 'shopping-cart', color: '#FF9800' });
 
     return (
         <View>
@@ -23,6 +24,7 @@ const ExpenseForm = () => {
     );
 };
 
+// region STYLE-SHEET
 const styles = StyleSheet.create({
     input: {
         backgroundColor: '#f5f5f5',
