@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { View, StyleSheet, SafeAreaView, Text, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
-import { AddExpenseTabs, ExpenseIncomeForm } from '@/features/add-expense';
+import { AddExpenseTabs, ExpenseIncomeFormView } from '@/features/add-expense';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useTheme } from '@/context/ThemeContext';
 
@@ -22,7 +22,7 @@ const AddExpenseScreen = () => {
             </View>
 
             <AddExpenseTabs activeTab={activeTab} onTabChange={setActiveTab}/>
-            <ExpenseIncomeForm type={activeTab}/>
+            <ExpenseIncomeFormView type={activeTab}/>
         </SafeAreaView>
     );
 }

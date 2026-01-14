@@ -1,2 +1,2 @@
-export { default as BalanceCard } from './BalanceCard';
-export { default as TransactionList } from './TransactionList';
+export { default as BalanceCardView } from './BalanceCardView';
+export { default as TransactionListView } from './TransactionListView';

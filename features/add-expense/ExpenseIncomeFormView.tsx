@@ -10,7 +10,7 @@ import { useTheme } from '@/context/ThemeContext';
 const { width } = Dimensions.get('window');
 
 // region EXPENSE INCOME FORM
-const ExpenseIncomeForm = ({ type }: { type: 'expense' | 'income' }) => {
+const ExpenseIncomeFormView = ({ type }: { type: 'expense' | 'income' }) => {
     const isExpense: boolean = type === 'expense';
     const steps: string[] = isExpense ? EXPENSE_STEPS : INCOME_STEPS;
     const [currentStep, setCurrentStep] = useState(0);
@@ -253,4 +253,4 @@ const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     },
 });
 
-export default ExpenseIncomeForm;
+export default ExpenseIncomeFormView;

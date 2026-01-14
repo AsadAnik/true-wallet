@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useMemo } from 'react';
-import TransactionItem from './TransactionItem';
+import TransactionItem from './components/TransactionItem';
 import { useTheme } from '@/context/ThemeContext';
 import { getDateString } from '@/utils/date.utils';
 
@@ -79,7 +79,7 @@ interface TransactionListProps {
 }
 
 // region TRANSACTION LIST
-const TransactionList = ({ selectedDate }: TransactionListProps) => {
+const TransactionListView = ({ selectedDate }: TransactionListProps) => {
     const filteredTransactions = selectedDate
         ? transactions.filter(t => t.date.startsWith(selectedDate))
         : transactions;
@@ -153,4 +153,4 @@ const createStyles = (isDarkMode: boolean) => StyleSheet.create({
     },
 });
 
-export default TransactionList;
+export default TransactionListView;

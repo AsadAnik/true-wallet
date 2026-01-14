@@ -5,20 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cfd2d8d-6fb9-4594-9f07-dbbdbb1cb558" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/features/my-cards/CardPickerView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/my-cards/components/Card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/my-cards/components/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/my-cards/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/profile/components/MenuItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/profile/components/ThemeSelector.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/profile/components/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/wallet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/wallet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/CalendarStrip.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/CalendarStrip.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/widgets/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/widgets/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/ExpenseIncomeForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/ExpenseIncomeForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/AddExpenseTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/AddExpenseTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/CardSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/CardSelector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/CategorySelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/CategorySelector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/CurrencySelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/CurrencySelector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/ExpenseForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/ExpenseForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/IncomeForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/IncomeForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/wallet/CreditCardsView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/wallet/CreditCardsView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/add-expense.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/add-expense.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/settings.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/widgets/CustomHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/widgets/CustomHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/context/ThemeContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/context/ThemeContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/add-expense/ExpenseIncomeForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/ExpenseIncomeFormView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/add-expense/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/BalanceCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/BalanceCardView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/TransactionItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/components/TransactionItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/TransactionList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/TransactionListView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/profile/ProfileMenuView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/profile/ProfileMenuView.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,10 +101,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/features/home/components" />
       <recent name="$PROJECT_DIR$/features/add-expense" />
       <recent name="$PROJECT_DIR$/features/add-expense/components" />
       <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/features/home/components" />
     </key>
   </component>
   <component name="RunManager" selected="npm.ios">
@@ -184,7 +193,12 @@
       <workItem from="1767868176399" duration="1719000" />
       <workItem from="1767884953886" duration="1915000" />
       <workItem from="1767951737028" duration="13131000" />
-      <workItem from="1768018074585" duration="2131000" />
+      <workItem from="1768018074585" duration="3319000" />
+      <workItem from="1768135636838" duration="1087000" />
+      <workItem from="1768196934039" duration="1192000" />
+      <workItem from="1768198272967" duration="3348000" />
+      <workItem from="1768234199810" duration="6029000" />
+      <workItem from="1768321319966" duration="914000" />
     </task>
     <servers />
   </component>

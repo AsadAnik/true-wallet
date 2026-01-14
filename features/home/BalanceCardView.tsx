@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // region BALANCE CARD
-const BalanceCard = () => {
+const BalanceCardView = () => {
     return (
         <LinearGradient
             colors={['#517be5', '#7c74e1', '#ba6cc4', '#dd81a9', '#f58773']}
@@ -69,4 +69,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default BalanceCard;
+export default BalanceCardView;
