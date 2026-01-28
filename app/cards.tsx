@@ -48,7 +48,7 @@ export default function CardsScreen() {
         setIsSelectMode(false);
     };
 
-    const handleCreateCard = (template) => {
+    const handleCreateCard = (template: unknown) => {
         const newCard = {
             id: `new-${Date.now()}`,
             bank: 'New Bank',

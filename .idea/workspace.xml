@@ -5,29 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cfd2d8d-6fb9-4594-9f07-dbbdbb1cb558" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/features/my-cards/CardPickerView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/my-cards/components/Card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/my-cards/components/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/my-cards/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/profile/components/MenuItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/profile/components/ThemeSelector.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/profile/components/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/add-expense.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/add-expense.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/settings.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/widgets/CustomHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/widgets/CustomHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/ThemeContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/context/ThemeContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/ExpenseIncomeForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/ExpenseIncomeFormView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/features/add-expense/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/home/BalanceCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/BalanceCardView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/home/TransactionItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/components/TransactionItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/home/TransactionList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/TransactionListView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/home/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/profile/ProfileMenuView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/profile/ProfileMenuView.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,10 +140,10 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="npm.android" />
+      <item itemvalue="npm.ios" />
       <item itemvalue="npm.reset-project" />
       <item itemvalue="npm.start" />
-      <item itemvalue="npm.ios" />
-      <item itemvalue="npm.android" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -199,6 +178,9 @@
       <workItem from="1768198272967" duration="3348000" />
       <workItem from="1768234199810" duration="6029000" />
       <workItem from="1768321319966" duration="914000" />
+      <workItem from="1768372881961" duration="25000" />
+      <workItem from="1768626216153" duration="3013000" />
+      <workItem from="1769571399464" duration="44000" />
     </task>
     <servers />
   </component>
