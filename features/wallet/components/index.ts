@@ -1,0 +1,1 @@
+export { default as BarChartWidget, BarDataItemType } from './BarChartWidget';

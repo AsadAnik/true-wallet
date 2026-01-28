@@ -3,7 +3,7 @@ import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
-type CardProps = {
+type CardPropsType = {
     bank: string;
     number: string;
     type: 'visa' | 'mastercard';
@@ -16,7 +16,7 @@ type CardProps = {
 const { width } = Dimensions.get('window');
 
 // region CARD COMPONENT
-const Card = ({ bank, number, type, colors, isSelected, onSelect, isSelectMode }: CardProps) => (
+const Card = ({ bank, number, type, colors, isSelected, onSelect, isSelectMode }: CardPropsType) => (
     <TouchableOpacity onPress={onSelect} activeOpacity={0.8}>
         <LinearGradient colors={colors as any} style={styles.card}>
             <View style={styles.cardTop}>

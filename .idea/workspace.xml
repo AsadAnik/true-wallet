@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cfd2d8d-6fb9-4594-9f07-dbbdbb1cb558" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/features/my-cards/components/CardList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/my-cards/components/CardTemplateSelector.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/wallet/components/BarChartWidget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/wallet/components/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/my-cards/CardPickerView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/my-cards/CardPickerView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/my-cards/components/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/my-cards/components/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/my-cards/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/features/my-cards/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/my-cards/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/features/my-cards/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/wallet/AnalyticsChartView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/wallet/AnalyticsChartView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -180,7 +192,7 @@
       <workItem from="1768321319966" duration="914000" />
       <workItem from="1768372881961" duration="25000" />
       <workItem from="1768626216153" duration="3013000" />
-      <workItem from="1769571399464" duration="44000" />
+      <workItem from="1769571399464" duration="21123000" />
     </task>
     <servers />
   </component>
