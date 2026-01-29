@@ -1,5 +1,5 @@
 import { StyleSheet, ScrollView } from 'react-native';
-import { DashboardSummaryView, OverviewChartView, TopSpendingView } from '@/features/dashboard';
+import { DashboardSummaryView, OverviewChartView, TopSpendingView } from '@/modules/dashboard';
 import { useMemo } from 'react';
 import { useTheme } from '@/context/ThemeContext';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardPickerView } from '@/features/my-cards';
+import { CardPickerView } from '@/modules/my-cards';
 
 // Mock Data
 const initialCards = [

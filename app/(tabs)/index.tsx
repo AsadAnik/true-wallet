@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
-import { BalanceCardView, TransactionListView } from '@/features/home';
+import { BalanceCardView, TransactionListView } from '@/modules/home';
 import CalendarStrip from '@/components/ui/CalendarStrip';
 import { useTheme } from '@/context/ThemeContext';
 

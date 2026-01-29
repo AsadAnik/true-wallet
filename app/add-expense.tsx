@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { View, StyleSheet, SafeAreaView, Text, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
-import { AddExpenseTabs, ExpenseIncomeFormView } from '@/features/add-expense';
+import { AddExpenseTabs, ExpenseIncomeFormView } from '@/modules/add-expense';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useTheme } from '@/context/ThemeContext';
 

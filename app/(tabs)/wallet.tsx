@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
-import { TotalBalanceHeadView, CreditCardsView, AnalyticsChartView } from '@/features/wallet';
+import { TotalBalanceHeadView, CreditCardsView, AnalyticsChartView } from '@/modules/wallet';
 import { useTheme } from '@/context/ThemeContext';
 
 // Mock data for different cards

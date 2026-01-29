@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
-import { ProfileHeaderView, ProfileMenuView } from '@/features/profile';
+import { ProfileHeaderView, ProfileMenuView } from '@/modules/profile';
 import { useTheme } from '@/context/ThemeContext';
 
 // region PROFILE SCREEN
