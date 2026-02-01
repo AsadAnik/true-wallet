@@ -5,54 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cfd2d8d-6fb9-4594-9f07-dbbdbb1cb558" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/my-cards/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/db.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/dashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/wallet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/wallet.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/add-expense.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/add-expense.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/ExpenseIncomeFormView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/add-expense/ExpenseIncomeFormView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/IncomeExpense.constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/add-expense/IncomeExpense.constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/AddExpenseTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/add-expense/components/AddExpenseTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/CardSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/add-expense/components/CardSelector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/CategorySelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/add-expense/components/CategorySelector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/ColorSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/add-expense/components/ColorSelector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/CurrencySelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/add-expense/components/CurrencySelector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/ExpenseForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/add-expense/components/ExpenseForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/IconPicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/add-expense/components/IconPicker.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/IncomeForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/add-expense/components/IncomeForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/add-expense/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/add-expense/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/add-expense/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/dashboard/DashboardSummaryView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/DashboardSummaryView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/dashboard/OverviewChartView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/OverviewChartView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/dashboard/TopSpendingView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/TopSpendingView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/dashboard/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/home/BalanceCardView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/home/BalanceCardView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/home/TransactionListView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/home/TransactionListView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/home/components/TransactionItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/home/components/TransactionItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/home/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/home/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/my-cards/CardPickerView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/my-cards/CardPickerView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/my-cards/components/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/my-cards/components/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/my-cards/components/CardList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/my-cards/components/CardList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/my-cards/components/CardTemplateSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/my-cards/components/CardTemplateSelector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/my-cards/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/my-cards/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/my-cards/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/profile/ProfileHeaderView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/profile/ProfileHeaderView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/profile/ProfileMenuView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/profile/ProfileMenuView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/profile/components/MenuItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/profile/components/MenuItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/profile/components/ThemeSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/profile/components/ThemeSelector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/profile/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/profile/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/profile/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/profile/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/wallet/AnalyticsChartView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/wallet/AnalyticsChartView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/wallet/CreditCardsView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/wallet/CreditCardsView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/wallet/TotalBalanceHeadView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/wallet/TotalBalanceHeadView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/wallet/components/BarChartWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/wallet/components/BarChartWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/wallet/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/wallet/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/wallet/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/wallet/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,6 +183,9 @@
       <workItem from="1768626216153" duration="3013000" />
       <workItem from="1769571399464" duration="21198000" />
       <workItem from="1769709667501" duration="3464000" />
+      <workItem from="1769715594343" duration="1940000" />
+      <workItem from="1769761030238" duration="6753000" />
+      <workItem from="1769921389608" duration="908000" />
     </task>
     <servers />
   </component>
