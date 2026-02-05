@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 
+
 /**
  * Helper to get date string YYYY-MM-DD
  * @param daysOffset
@@ -11,6 +12,7 @@ export const getDateString = (daysOffset = 0) => {
     return date.toISOString().split('T')[0];
 };
 
+
 /**
  * Generate Unique ID for database records
  */
@@ -18,6 +20,7 @@ export const getDateString = (daysOffset = 0) => {
 export const generateId = (): string => {
   return nanoid();
 };
+
 
 /**
  * Format date for database
@@ -32,6 +35,7 @@ export const formatDate = (date: Date | string): string => {
     return `${year}-${month}-${day}`;
 };
 
+
 /**
  * Format date for display
  * @param date
@@ -44,4 +48,13 @@ export const formatDateForDisplay = (date: Date | string): string => {
         month: 'long',
         day: 'numeric'
     });
+};
+
+
+/**
+ * Get current timestamp
+ */
+// region Get Current Timestamp
+export const getCurrentTimestamp = (): string => {
+    return new Date().toISOString();
 };
