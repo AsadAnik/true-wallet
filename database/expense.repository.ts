@@ -8,6 +8,7 @@ class ExpenseRepository {
      * Create a new expense
      * @param input
      */
+    // region Create
     async create(input: ExpenseInputType): Promise<ExpenseType> {
         const db: SQLiteDatabase = databaseService.getDB();
         const timestamp = getCurrentTimestamp();
@@ -29,13 +30,13 @@ class ExpenseRepository {
             [
                 expense.id,
                 expense.title,
-                expense.expense_date,
+                expense.expense_date instanceof Date ? expense.expense_date.toISOString() : expense.expense_date,
                 expense.currency_symbol,
                 expense.currency_amount,
                 expense.icon_name,
                 expense.icon_color,
-                expense.card_id ?? null,
-                expense.synced,
+                typeof expense.card_id === 'object' && expense.card_id !== null ? (expense.card_id as { id: string }).id : (expense.card_id ?? null),
+                typeof expense.synced === 'number' ? expense.synced : 0,
                 expense.created_at,
                 expense.updated_at
             ]
@@ -47,6 +48,7 @@ class ExpenseRepository {
     /**
      * Get all expenses
      */
+    // region Get All
     async getAll(): Promise<ExpenseType[]> {
         const db = databaseService.getDB();
         const expenses = await db.getAllAsync<ExpenseType>('SELECT * FROM expenses WHERE deleted = 0 ORDER BY expense_date DESC');
@@ -57,6 +59,7 @@ class ExpenseRepository {
      * Get expense by id
      * @param id
      */
+    // region Get By Id
     async getById(id: string): Promise<ExpenseType | null> {
         const db = databaseService.getDB();
         const expense = await db.getFirstAsync<ExpenseType>('SELECT * FROM expenses WHERE id = ? AND deleted = 0', [id]);
@@ -67,6 +70,7 @@ class ExpenseRepository {
      * Delete expense by id
      * @param id
      */
+    // region Delete
     async delete(id: string): Promise<boolean> {
         const db = databaseService.getDB();
         const timestamp = getCurrentTimestamp();
@@ -79,6 +83,7 @@ class ExpenseRepository {
      * @param id
      * @param input
      */
+    // region Update
     async update(id: string, input: Partial<ExpenseInputType>): Promise<ExpenseType | null> {
         const db = databaseService.getDB();
         const existing = await this.getById(id);
@@ -99,10 +104,10 @@ class ExpenseRepository {
                 updated.title,
                 updated.currency_amount,
                 updated.currency_symbol,
-                updated.expense_date,
+                updated.expense_date instanceof Date ? updated.expense_date.toISOString() : updated.expense_date,
                 updated.icon_name,
                 updated.icon_color,
-                updated.card_id ?? null,
+                typeof updated.card_id === 'object' && updated.card_id !== null ? (updated.card_id as { id: string }).id : (updated.card_id ?? null),
                 updated.updated_at,
                 id,
             ]
@@ -114,8 +119,11 @@ class ExpenseRepository {
     /**
      * Get Total Amount
      */
-    async getTotal(): Promise<void> {
-
+    // region Get Total
+    async getTotal(): Promise<number> {
+        const db = databaseService.getDB();
+        const result = await db.getFirstAsync<{ total: number | null }>('SELECT SUM(currency_amount) as total FROM expenses WHERE deleted = 0');
+        return result?.total || 0;
     }
 }
 
