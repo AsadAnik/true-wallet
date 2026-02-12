@@ -24,3 +24,15 @@ export type ExpenseType = {
  * Excluding the id, created_at, updated_at, synced, deleted fields for better control
  */
 export type ExpenseInputType = Omit<ExpenseType, 'id' | 'created_at' | 'updated_at' | 'synced' | 'deleted'>;
+
+/**
+ * Expense Core Type
+ * This can be using into UI part where we need to add types
+ */
+export type ExpenseCoreType = Omit<ExpenseType, | 'created_at' | 'updated_at' | 'synced' | 'deleted'>;
+
+/**
+ * Expense Update Type
+ * This should use for Update entity for the Expense
+ */
+export type ExpenseUpdateType = Partial<ExpenseType>;

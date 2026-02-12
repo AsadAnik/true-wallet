@@ -23,10 +23,9 @@ class ExpenseRepository {
         };
 
         await db.runAsync(
-            `INSERT INTO expenses (
-                id, title, expense_date, currency_symbol, currency_amount, 
-                icon_name, icon_color, card_id, synced, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            `INSERT INTO expenses (id, title, expense_date, currency_symbol, currency_amount,
+                                   icon_name, icon_color, card_id, synced, created_at, updated_at)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
             [
                 expense.id,
                 expense.title,
@@ -35,7 +34,9 @@ class ExpenseRepository {
                 expense.currency_amount,
                 expense.icon_name,
                 expense.icon_color,
-                typeof expense.card_id === 'object' && expense.card_id !== null ? (expense.card_id as { id: string }).id : (expense.card_id ?? null),
+                typeof expense.card_id === 'object' && expense.card_id !== null ? (expense.card_id as {
+                    id: string
+                }).id : (expense.card_id ?? null),
                 typeof expense.synced === 'number' ? expense.synced : 0,
                 expense.created_at,
                 expense.updated_at
@@ -97,9 +98,15 @@ class ExpenseRepository {
             synced: 0,
         };
 
-        await db.runAsync(`UPDATE expenses 
-            SET title = ?, currency_amount = ?, currency_symbol = ?, expense_date = ?, icon_name = ?, icon_color = ?, card_id = ? 
-            WHERE id = ?`,
+        await db.runAsync(`UPDATE expenses
+                           SET title = ?,
+                               currency_amount = ?,
+                               currency_symbol = ?,
+                               expense_date = ?,
+                               icon_name = ?,
+                               icon_color = ?,
+                               card_id = ?
+                           WHERE id = ?`,
             [
                 updated.title,
                 updated.currency_amount,
@@ -107,7 +114,9 @@ class ExpenseRepository {
                 updated.expense_date instanceof Date ? updated.expense_date.toISOString() : updated.expense_date,
                 updated.icon_name,
                 updated.icon_color,
-                typeof updated.card_id === 'object' && updated.card_id !== null ? (updated.card_id as { id: string }).id : (updated.card_id ?? null),
+                typeof updated.card_id === 'object' && updated.card_id !== null ? (updated.card_id as {
+                    id: string
+                }).id : (updated.card_id ?? null),
                 updated.updated_at,
                 id,
             ]
@@ -122,7 +131,9 @@ class ExpenseRepository {
     // region Get Total
     async getTotal(): Promise<number> {
         const db = databaseService.getDB();
-        const result = await db.getFirstAsync<{ total: number | null }>('SELECT SUM(currency_amount) as total FROM expenses WHERE deleted = 0');
+        const result = await db.getFirstAsync<{
+            total: number | null
+        }>('SELECT SUM(currency_amount) as total FROM expenses WHERE deleted = 0');
         return result?.total || 0;
     }
 }
