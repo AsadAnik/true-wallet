@@ -99,13 +99,13 @@ class ExpenseRepository {
         };
 
         await db.runAsync(`UPDATE expenses
-                           SET title = ?,
+                           SET title           = ?,
                                currency_amount = ?,
                                currency_symbol = ?,
-                               expense_date = ?,
-                               icon_name = ?,
-                               icon_color = ?,
-                               card_id = ?
+                               expense_date    = ?,
+                               icon_name       = ?,
+                               icon_color      = ?,
+                               card_id         = ?
                            WHERE id = ?`,
             [
                 updated.title,
