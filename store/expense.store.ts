@@ -7,7 +7,7 @@ interface ExpenseState {
     // State
     expenses: ExpenseCoreType[];
     isLoading: boolean;
-    error: string | null;
+    error: (string | null);
 
     // Actions
     loadExpenses: () => Promise<void>;
@@ -26,7 +26,6 @@ export const useExpenseStore = create<ExpenseState>((set, get) => ({
     expenses: [],
     isLoading: false,
     error: null,
-    seletedCategory: null,
 
     // Actions
     // region Load Expenses
@@ -132,8 +131,9 @@ export const useExpenseStore = create<ExpenseState>((set, get) => ({
             }
 
         } catch (error) {
-            const message =
-                console.error('Delete Failed: ', error);
+            const message = error instanceof Error ? error.message : "Failed to Delete";
+            set({ isLoading: false, error: message });
+            console.error('Delete Failed: ', error);
             throw error;
         }
     },
